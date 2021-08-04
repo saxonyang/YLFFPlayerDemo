@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3133D0EC26AEB1BB00CF2B6D /* YLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3133D0EB26AEB1BB00CF2B6D /* YLModel.m */; };
+		3133D11D26B2743600CF2B6D /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3133D11826B2743500CF2B6D /* libavformat.a */; };
+		3133D11E26B2743600CF2B6D /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3133D11926B2743500CF2B6D /* libavcodec.a */; };
+		3133D11F26B2743600CF2B6D /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3133D11A26B2743500CF2B6D /* libavutil.a */; };
+		3133D12026B2743600CF2B6D /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3133D11B26B2743500CF2B6D /* libswresample.a */; };
+		3133D12126B2743600CF2B6D /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3133D11C26B2743600CF2B6D /* libswscale.a */; };
 		31D513E22698153C007CEDF9 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D513E126981535007CEDF9 /* libbz2.tbd */; };
 		31D513E526981554007CEDF9 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D513E42698154A007CEDF9 /* libiconv.tbd */; };
 		31D513E826981567007CEDF9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D513E72698155E007CEDF9 /* libz.tbd */; };
@@ -31,6 +36,11 @@
 		3133D0EA26AEB1BB00CF2B6D /* YLModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLModel.h; sourceTree = "<group>"; };
 		3133D0EB26AEB1BB00CF2B6D /* YLModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLModel.m; sourceTree = "<group>"; };
 		3133D0EF26B1474E00CF2B6D /* YLData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLData.h; sourceTree = "<group>"; };
+		3133D11826B2743500CF2B6D /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavformat.a; sourceTree = "<group>"; };
+		3133D11926B2743500CF2B6D /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavcodec.a; sourceTree = "<group>"; };
+		3133D11A26B2743500CF2B6D /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
+		3133D11B26B2743500CF2B6D /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
+		3133D11C26B2743600CF2B6D /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
 		31D5135626981420007CEDF9 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		31D5135726981420007CEDF9 /* buffersrc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffersrc.h; sourceTree = "<group>"; };
 		31D5135826981420007CEDF9 /* buffersink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffersink.h; sourceTree = "<group>"; };
@@ -186,8 +196,13 @@
 				31D513E826981567007CEDF9 /* libz.tbd in Frameworks */,
 				31D5141926983D56007CEDF9 /* AVFoundation.framework in Frameworks */,
 				31DCF227268D974900FEB386 /* libstdc++.6.0.9.tbd in Frameworks */,
+				3133D12026B2743600CF2B6D /* libswresample.a in Frameworks */,
+				3133D11F26B2743600CF2B6D /* libavutil.a in Frameworks */,
 				31D513EE26981601007CEDF9 /* AudioToolbox.framework in Frameworks */,
 				31D5140D269816F1007CEDF9 /* CoreMedia.framework in Frameworks */,
+				3133D11D26B2743600CF2B6D /* libavformat.a in Frameworks */,
+				3133D11E26B2743600CF2B6D /* libavcodec.a in Frameworks */,
+				3133D12126B2743600CF2B6D /* libswscale.a in Frameworks */,
 				31D513E526981554007CEDF9 /* libiconv.tbd in Frameworks */,
 				31D513EB269815D0007CEDF9 /* VideoToolbox.framework in Frameworks */,
 			);
@@ -384,6 +399,11 @@
 		31D513CD26981421007CEDF9 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				3133D11926B2743500CF2B6D /* libavcodec.a */,
+				3133D11826B2743500CF2B6D /* libavformat.a */,
+				3133D11A26B2743500CF2B6D /* libavutil.a */,
+				3133D11B26B2743500CF2B6D /* libswresample.a */,
+				3133D11C26B2743600CF2B6D /* libswscale.a */,
 			);
 			path = lib;
 			sourceTree = "<group>";

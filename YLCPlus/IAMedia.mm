@@ -23,6 +23,18 @@ void init_fifo(struct YLFiFO **fifo) {
     (*fifo)->size = 0;
 }
 
+void free_fifo(struct YLFiFO **fifo) {
+    struct YLFiFO *p = *fifo;
+    struct YLFiFOData *cur = p->fist;
+    while (cur != NULL) {
+        struct YLFiFOData *q = cur->next;
+        free(cur->buf);
+        free(cur);
+        cur = q;
+    }
+    free(p);
+}
+
 void push_fifo(struct YLFiFO **fifo, uint8_t *buf, int linesize, int width, int height, double pts) {
     struct YLFiFO *p = *fifo;
     struct YLFiFOData *a = (struct YLFiFOData *)malloc(sizeof(YLFiFOData));
@@ -60,25 +72,6 @@ void pop_fifo(struct YLFiFO **fifo, struct YLFiFOData **e) {
     }
 }
 
-void search_fifo(struct YLFiFO **fifo, struct YLFiFOData **e, double pts) {
-    struct YLFiFO *p = *fifo;
-    if (p->size < 5) {
-        *e = NULL;
-        return;
-    }
-    struct YLFiFOData *n = NULL;
-//    pop_fifo(fifo, &n);
-    while (p->size > 0 && p->fist->pts < pts) {
-        if (n)
-            free(n->buf);
-        free(n);
-        pop_fifo(fifo, &n);
-    }
-    if (n)
-        printf("_time = %f --- %f  \n", pts, n->pts);
-    *e = n;
-}
-
 int IAMedia::getSampleRate() {
     return  _video_dec_ctx->sample_rate;
 }
@@ -99,6 +92,18 @@ IAMedia::~IAMedia(void) {
     }
     if (_frame) {
         av_frame_free(&_frame);
+    }
+    if (_resample_context) {
+        swr_free(&_resample_context);
+    }
+    if (_sws_ctx) {
+        sws_freeContext(_sws_ctx);
+    }
+    if (_video_fifo) {
+        free_fifo(&_video_fifo);
+    }
+    if (_audio_fifo) {
+        free_fifo(&_audio_fifo);
     }
 }
 
